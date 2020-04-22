@@ -10,7 +10,7 @@ init-dev:	init
 	pip install $(USER_FLAG) -r requirements-dev.txt
 
 analyze:
-	flake8 record_uploader
+# 	flake8 record_uploader
 	pylint record_uploader
 
 test: analyze
