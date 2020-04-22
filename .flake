@@ -1,6 +1,6 @@
 [flake8]
 #This is a Python library for checking your code base against coding style (PEP8), programming errors, etc.
-max-line-length = 110
-ignore = E731,W504 #E731: use a def statement. W504: line break after binary operator.
+max-line-length = 120
+ignore = E731,W504,E501 #E731: use a def statement. W504: line break after binary operator.
 exclude = record_uploader/__init__.py,setup.py,build,venv,.svn,CVS,.git,__pycache__,.eggs,*.egg,*/_vendor/*,node_modules
 format = ${cyan}%(path)s${reset}:${yellow_bold}%(row)d${reset}:${green_bold}%(col)d${reset}: ${red_bold}%(code)s${reset} %(text)s
