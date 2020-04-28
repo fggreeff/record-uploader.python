@@ -16,18 +16,14 @@ class ParseCSVTestCase(unittest.TestCase):
         """
 
         expected_file_contents = [{'filename': 'some_file_in_s3.csv',
-                                   'authorizer': 'Joe Blogs',
+                                   'authorizer': 'Joe Blogs', 'title': 'mr',
                                    'expected_row_count': '5'},
                                   {'filename': 'example_file.csv',
-                                   'authorizer': 'Steve ',
-                                   'expected_row_count': '10'}]
+                                   'authorizer': 'Sally ',
+                                   'expected_row_count': '10', 'title': 'ms'}]
 
         parse_csv_client = self._create_client()
         parsed_row_collection = parse_csv_client.read_csv()
 
         self.assertEqual(parsed_row_collection,
                          expected_file_contents)
-
-
-# if __name__ == '__main__':
-#     unittest.main()
