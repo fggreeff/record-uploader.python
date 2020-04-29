@@ -5,8 +5,11 @@ The python application takes a CSV file from S3, containing a list of data files
 
 ## Prerequisites
 
-- Python 3.7+ `brew install python3`
+- [Python](https://www.python.org/) 3.7+ `brew install python3`
 - The modules in `requirements.txt` (see the *getting started* instructions below)
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [JetBrains DataGrip](https://www.jetbrains.com/datagrip/features/mysql.html) IDE for working with databases
+
 
 
 ## Getting started
@@ -41,9 +44,13 @@ These steps should be familiar if you're familiar with python; if you're not, he
 
 An example execution for running the application is shown below:
 
-```
-TODO
-```
+Run postgres docker container: 
+> `docker-compose up`
+
+Ensure you can connect (DataGrip IDE) to connection string
+- Default port 5432 
+> jdbc:postgresql://localhost:5432/postgres
+
 
 Get info by running `record_uploader --help`
 
@@ -102,3 +109,5 @@ class Counter(Words):
 - Deploy to AWS: **TODO**
 
 ## Source
+
+[Docker_postgres](https://hub.docker.com/_/postgres)

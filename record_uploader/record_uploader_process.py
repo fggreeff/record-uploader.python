@@ -3,6 +3,7 @@ import logging
 from record_uploader.parse_file import ParseFile
 from record_uploader.validation_rules import ValidationRules
 from record_uploader.validate_file import ValidateFile
+from record_uploader.db_connector import RelationalDBClient
 
 
 logging.basicConfig()
@@ -29,8 +30,22 @@ def parse_and_validate_file(bucket, key):
     return file_contents
 
 
+def connect(cluster_ids, user, database):
+    cluster_ids = list(set(cluster_ids))
+
+    db_clients = [RelationalDBClient(
+        user,
+        database,
+        cluster
+    ) for cluster in cluster_ids]
+
+
 def main_process(source_bucket, source_key):
     validated_rows = parse_and_validate_file(source_bucket, source_key)
 
     for row in validated_rows:
         log.info(row)
+
+
+
+
