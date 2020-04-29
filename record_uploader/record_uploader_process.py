@@ -39,12 +39,21 @@ def connect(cluster_ids, user, database):
         cluster
     ) for cluster in cluster_ids]
 
+    for client in db_clients:
+        log.info(client)
 
-def main_process(source_bucket, source_key):
+    # redshift_orchestrator = RedshiftOrchestrator(db_clients, query_client)
+
+    results = []
+
+
+def main_process(source_bucket, source_key, cluster_ids, bucket, user, database):
     validated_rows = parse_and_validate_file(source_bucket, source_key)
 
     for row in validated_rows:
         log.info(row)
+
+    connect(cluster_ids, user, database)
 
 
 

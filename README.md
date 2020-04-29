@@ -58,8 +58,17 @@ Get info by running `record_uploader --help`
 
 *Instructions on how to get a development environment running.*
 
+-  source into virtual env
 - `make clean build`
 - `make install`
+- Run with default: `record_uploader -b test-bucket -i test-clusterid`
+
+
+Alternatively, override default cli vars:
+```
+record_uploader -s source_bucket -k source_key -u my_user \         2 ↵
+-d my_db -i test-cluster-1 -b test-bucket
+```
 
 ## Running the tests
 
