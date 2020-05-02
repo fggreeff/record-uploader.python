@@ -14,7 +14,7 @@ analyze:
 	pylint record_uploader
 
 test: analyze
-	nosetests  -s --with-coverage  --cover-package record_uploader --cover-inclusive --cover-html --cover-min-percentage 85  --cover-html-dir build/coverage
+	nosetests  -s --with-coverage  --cover-package record_uploader --cover-inclusive --cover-html --cover-min-percentage 80  --cover-html-dir build/coverage
 
 build: FORCE
 	python setup.py bdist_wheel
