@@ -18,13 +18,14 @@ log.setLevel(logging.INFO)
 @click.option('-u', '--user', help='Postgres user to make changes.', default='my_user',
               show_default=True
               )
-@click.option('-d', '--database', help='Target Postgres Database.', default='my_db', show_default=True)
-@click.option('-i', '--cluster-id', help='Target Postgres cluster ID.', required=True)
+@click.option('-p', '--port', help='Target Postgres Database port.', default=5432, show_default=True)
+@click.option('-h', '--host', help='Target Postgres Database host.', default='localhost', show_default=True)
+@click.option('-d', '--database', help='Target Postgres Database.', default='postgres', show_default=True)
 @click.option('-b', '--bucket', help='S3 Bucket location for where the files are uploaded from.',
               required=True)
-def cli(source_bucket, source_key, cluster_id, bucket, user, database):
+def cli(source_bucket, source_key, bucket, user, database, port, host):
     log.debug('Parsing arguments.')
-    main_process(source_bucket, source_key, cluster_id, bucket, user, database)
+    main_process(source_bucket, source_key, bucket, user, database, port, host)
 
 
 def main():     # pragma: nocover

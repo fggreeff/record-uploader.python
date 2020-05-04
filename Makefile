@@ -22,6 +22,9 @@ build: FORCE
 install: build
 	pip install $(USER_FLAG) --upgrade --force-reinstall dist/record_uploader-0.0.1-py3-none-any.whl
 
+run: install
+	record_uploader -b test-bucket
+
 uninstall: FORCE
 	pip uninstall $(USER_FLAG) -y record_uploader
 

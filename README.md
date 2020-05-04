@@ -51,6 +51,7 @@ Ensure you can connect (DataGrip IDE) to connection string
 - Default port 5432 
 > jdbc:postgresql://localhost:5432/postgres
 
+Run [scripts](./sql-test/entrypoint) to setup schema and table
 
 Get info by running `record_uploader --help`
 
@@ -58,23 +59,22 @@ Get info by running `record_uploader --help`
 
 *Instructions on how to get a development environment running.*
 
--  source into virtual env
-- `make clean build`
-- `make install`
-- Run with default: `record_uploader -b test-bucket -i test-clusterid`
+- source into virtual env `source record_uploader`
+- Run with default values: `make run`
 
 
 Alternatively, override default cli vars:
 ```
 record_uploader -s source_bucket -k source_key -u my_user \         2 ↵
--d my_db -i test-cluster-1 -b test-bucket
+-d my_db -p 1234 -h localhost -b test-bucket
 ```
 
 ## Running the tests
 
 Run unit tests and any linting checks.
 
-- `make test`
+- Run unit tests: `make test`
+- Run sql_query tests: `cd ./sql-test/` and run `bash ./sql-test/run-tests.sh`
 
 ### Pylint & Flake8 Checks 
 
