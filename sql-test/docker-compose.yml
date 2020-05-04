@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - ./entrypoint:/docker-entrypoint-initdb.d
+      - ../record_uploader/query_templates:/app
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: "my_user"
+      POSTGRES_DB: "model"
+    ports:
+      - 5432
+    networks:
+      - overlay
+
+networks:
+  overlay:
