@@ -22,7 +22,7 @@ class ValidateFile:
         Validate file contents
         """
 
-        log.info("Validating S3 file contents")
+        log.info("Validating file contents")
         self._validate_header()
         self._validate_rows()
 
