@@ -74,7 +74,7 @@ record_uploader -s source_bucket -k source_key -u my_user \         2 ↵
 Run unit tests and any linting checks.
 
 - Run unit tests: `make test`
-- Run sql_query tests: `cd ./sql-test/` and run `bash ./sql-test/run-tests.sh`
+- Run sql_query tests: `cd ./sql-test/` and run `./run-tests.sh`
 
 ### Pylint & Flake8 Checks 
 
