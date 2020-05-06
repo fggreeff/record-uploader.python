@@ -1,7 +1,7 @@
 # record-uploader.python
 
 The applications demonstrates a simple ETL process, focusing on extracting and loading from S3 to DB
-The python application takes a CSV file from S3, containing a list of data files to update in Postgres.
+The python application takes a CSV file from S3, containing a list of data files to insert into Postgres.
 
 ## Prerequisites
 
@@ -9,8 +9,6 @@ The python application takes a CSV file from S3, containing a list of data files
 - The modules in `requirements.txt` (see the *getting started* instructions below)
 - [Docker](https://www.docker.com/products/docker-desktop)
 - [JetBrains DataGrip](https://www.jetbrains.com/datagrip/features/mysql.html) IDE for working with databases
-
-
 
 ## Getting started
 
@@ -48,20 +46,20 @@ Run postgres docker container:
 > `docker-compose up`
 
 Ensure you can connect (DataGrip IDE) to connection string
-- Default port 5432 
+> Default port 5432 
 > jdbc:postgresql://localhost:5432/postgres
 
 Run [scripts](./sql-test/entrypoint) to setup schema and table
 
-Get info by running `record_uploader --help`
 
-## Installing
+#### Running application
 
 *Instructions on how to get a development environment running.*
 
 - source into virtual env `source record_uploader`
 - Run with default values: `make run`
 
+Get info by running `record_uploader --help`
 
 Alternatively, override default cli vars:
 ```
