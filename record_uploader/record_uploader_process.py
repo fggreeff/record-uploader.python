@@ -31,17 +31,6 @@ def parse_and_validate_file(bucket, key):
 
     return file_contents
 
-
-# def connect(user, database, host, port):
-#     log.info("Connecting to DB...")
-#
-#     db_clients = RelationalDBClient(
-#         user,
-#         database,
-#         host,
-#         port
-#     )
-
 def main_process(source_bucket, source_key, bucket, user, database, port, host):
 
     results = []

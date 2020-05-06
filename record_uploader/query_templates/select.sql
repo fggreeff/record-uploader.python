@@ -1,0 +1,1 @@
+SELECT * FROM model.s3_files WHERE row_update_date <= '2021-05-15'::DATE;
